@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "module": "ES6",
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "declaration": false,
+    "sourceMap": true,
+    "exactOptionalPropertyTypes": false,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "lib": [ "DOM", "DOM.Iterable", "ES6" ],
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": true,
+    "outDir": "../js/",
+    "preserveConstEnums": false,
+    "preserveValueImports": false,
+    "pretty": true,
+    "removeComments": true,
+    "strict": true,
+    "useDefineForClassFields": false,
+    "useUnknownInCatchVariables": true,
+    "watch": true
+  },
+  "compileOnSave": true
+}
