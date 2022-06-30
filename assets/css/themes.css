@@ -1,0 +1,13 @@
+:root {
+  --home-banner-bg-colour: #807b76;
+  --home-banner-font-colour: white;
+  --nav-link-text-colour: #595959;
+  --nav-link-text-colour-selected: white;
+  --nav-link-bg-colour-selected: #595959;
+}
+.theme-home {
+  --nav-link-text-colour: white;
+  --nav-link-text-colour-selected: var(--home-banner-bg-colour);
+  --nav-link-bg-colour-selected: white;
+}
+/*# sourceMappingURL=themes.css.map */

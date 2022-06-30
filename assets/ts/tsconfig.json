@@ -27,7 +27,5 @@
     "strict": true,
     "useDefineForClassFields": false,
     "useUnknownInCatchVariables": true,
-    "watch": true
-  },
-  "compileOnSave": true
+  }
 }

@@ -1,0 +1,105 @@
+@import url('./themes.css');
+* {
+  box-sizing: border-box;
+}
+/* Setup page */
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Noto Sans', sans-serif;
+}
+/* Setup headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+}
+/* Navbar */
+nav {
+  width: 100vw;
+  color: var(--home-banner-font-colour);
+  padding-left: 2em;
+  padding-right: 2em;
+  height: 20vh;
+  /* Grid layout */
+  display: grid;
+  grid-template-columns: min-content 1fr min-content min-content min-content min-content min-content;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0.5em 0.5em;
+  grid-auto-flow: row;
+  grid-template-areas: "logo spacing home about contact credentials policies";
+}
+nav > .logo {
+  grid-area: logo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+}
+nav > .logo > img {
+  max-height: 10vh;
+}
+nav > .home {
+  grid-area: home;
+}
+nav > .about {
+  grid-area: about;
+}
+nav > .contact {
+  grid-area: contact;
+}
+nav > .credentials {
+  grid-area: credentials;
+}
+nav > .policies,
+nav > .mobile-nav {
+  grid-area: policies;
+}
+nav > div > a {
+  text-decoration: none;
+  color: var(--nav-link-text-colour);
+  font-size: larger;
+  font-weight: bold;
+  padding: 2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin: 5px;
+  border-radius: 10px;
+}
+nav > div.selected > a {
+  color: var(--nav-link-text-colour-selected);
+  background-color: var(--nav-link-bg-colour-selected);
+}
+nav > .mobile-nav {
+  visibility: hidden;
+}
+main {
+  padding: 5em;
+  padding-top: 1em;
+}
+/* Alignment */
+.centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.middle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.left {
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+}
+/*# sourceMappingURL=main.css.map */

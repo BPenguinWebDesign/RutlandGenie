@@ -1,0 +1,2 @@
+./compile-ts
+./compile-less
