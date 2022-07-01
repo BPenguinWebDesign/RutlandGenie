@@ -2,60 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
     <title>Policies | Rutland Genie Tutoring</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600;700&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/policies.css">
-    <link rel="stylesheet" href="/assets/css/media-queries.css">
 
     <script defer src="/assets/js/main.js"></script>
   </head>
   <body>
     <nav>
-      <div class="logo"> <!-- Why this no work -->
-        <img srcset="/assets/img/logo-320.png 320w,
+      <div class="logo">
+        <img srcset="/assets/img/logo-160.png 160w,
+                     /assets/img/logo-240.png 240w,
+                     /assets/img/logo-320.png 320w,
                      /assets/img/logo-480.png 480w,
-                     /assets/img/logo-640.png 640w,
-                     /assets/img/logo-800.png 800w"
-
-             sizes="(max-width: 600px) 480px, 800px"
-             src="/assets/img/logo-800.png"
-             alt="Logo Image">
+                     /assets/img/logo-640.png 640w"
+             
+             sizes="25vmin"
+             
+	           src="/assets/img/logo-640.png"
+	           alt="Logo Image"
+             width="100%">
       </div>
 
-      <div class="right mobile-nav">
-        <button>Hello</button>
-      </div>
-      
-      <div class="centre home">
+      <div class="home nav-item">
         <a href="/">Home</a>
       </div>
-      
-      <div class="centre about">
+
+      <div class="about nav-item">
         <a href="/about">About</a>
       </div>
-      
-      <div class="centre contact">
+
+      <div class="contact nav-item">
         <a href="/contact">Contact</a>
       </div>
-      
-      <div class="centre credentials">
+
+      <div class="credentials nav-item">
         <a href="/credentials">Credentials</a>
       </div>
-      <div class="centre policies selected">
+      <div class="policies nav-item selected">
         <a href="#">Policies</a>
       </div>
     </nav>
 
-    <main>
-      <!-- CONTENT -->
-      Word.
-    </main>
+    <div class="container">
+      <main>
+        Policies Page
+      </main>
+    </div>
 
+    <footer>Copyright © Rutland Genie. All rights reserved.</footer>
   </body>
 </html>

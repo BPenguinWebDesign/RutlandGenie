@@ -1,18 +1,105 @@
-section.home-banner {
-  background-color: var(--home-banner-bg-colour);
-  color: var(--home-banner-font-colour);
+@import url('./main.less');
+@import url('./components/spacing.less');
 
-  text-align: center;
-  font-size: xx-large;
-  
-  padding: 20vh;
-  padding-left: 1em;
-  padding-right: 1em;
+.container {
+  > section.home-banner:extend(.horizontal-pad-1) {
+    background-color: var(--home-banner-bg-colour);
+    color: var(--home-banner-font-colour);
 
-  max-height: 85vh;
+    text-align: center;
+    font-size: xx-large;
+    
+    padding: 20vh;
+
+    max-height: 85vh;
+  }
+
+  > .mission:extend(.centre):extend(.text-centre) {
+    height: 20vh;
+  }
+
+  > .quote-container:extend(.centre) {
+    border: 2px solid var(--quotes-border-colour);
+    background-color: var(--quotes-bg-colour);
+    
+    > .quotes:extend(.centre):extend(.text-centre) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: min-content repeat(2, min-content);
+      grid-auto-columns: 1fr;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "title title"
+        "quote1 quote2"
+        "quote3 quote3";
+      
+      width: fit-content;
+
+      .title:extend(.vertical-pad-1) {
+        grid-area: title;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        margin-bottom: 2em;
+      }
+
+      .quote1 { grid-area: quote1; }
+      .quote2 { grid-area: quote2; }
+      .quote3 {
+        grid-area: quote3;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      > blockquote {
+        font-family: 'Raleway', sans-serif;
+        font-weight: normal;
+        font-style: italic;
+        font-size: x-large;
+
+        &:before {
+          font-family: 'Gulzar', serif;
+          content: '“';
+          font-size: 10em;
+          line-height: 0.1rem;
+          margin-right: 0.25em;
+          vertical-align: -0.55em;
+        }
+
+        > p {
+          display: inline;
+          line-height: 1rem;
+        }
+      }
+    }
+  }
+
+  > .info-panels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 3em;
+    grid-auto-flow: row;
+    grid-template-areas:
+      '. . .';
+    
+    margin-top: 3em;
+    margin-left: 10em;
+    margin-right: 10em;
+
+    > section:extend(.horizontal-pad-1) {
+      > h1 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: x-large;
+      }
+    }
+  }
 }
 
 nav {
-  position: absolute;
-  top: 0;
+  background-color: var(--nav-bg-colour);
 }
+
+@import url('./media-queries/mq-home.less');

@@ -1,30 +1,10 @@
-@import url('./themes.css');
+@import url('./themes.less');
+@import url('./components/utils/alignment.less');
+@import url('./components/setup.less');
 
-* {
-  box-sizing: border-box;
-}
-
-/* Setup page */
-html,body {
-  margin: 0 !important;
-  padding: 0 !important;
-
-  height: 100vh;
-  width: 100vw;
-
-  overflow-x: hidden;
-
-  font-family: 'Noto Sans', sans-serif;
-}
-
-/* Setup headers */
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'Josefin Sans', sans-serif;
-  margin: 0;
-}
-
-/* Navbar */
+// Navbar
 nav {
+  grid-area: nav;
   width: 100vw;
   
   color: var(--home-banner-font-colour);
@@ -32,11 +12,11 @@ nav {
   padding-left: 2em;
   padding-right: 2em;
 
-  height: 20vh;
+  height: 15vh;
 
-  /* Grid layout */
+  // Grid layout
   display: grid;
-  grid-template-columns: min-content 1fr min-content min-content min-content min-content min-content;
+  grid-template-columns: 25vmin 1fr min-content min-content min-content min-content min-content;
   grid-template-rows: 1fr;
   grid-auto-columns: 1fr;
   gap: 0.5em 0.5em;
@@ -44,27 +24,19 @@ nav {
   grid-template-areas:
     "logo spacing home about contact credentials policies";
   
-  > .logo {
+  > .logo:extend(.centre):extend(.middle) {
     grid-area: logo;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
     padding: 0.5em;
-
-    > img {
-      max-height: 10vh;
-    }
   }
 
+  // Set elements in their grid areas
   > .home { grid-area: home; }
   > .about { grid-area: about; }
   > .contact { grid-area: contact; }
   > .credentials { grid-area: credentials; }
-  > .policies,
-  > .mobile-nav { grid-area: policies; }
+  > .policies { grid-area: policies; }
 
-  > div {
+  > .nav-item:extend(.centre) {
     > a {
       text-decoration: none;
       color: var(--nav-link-text-colour);
@@ -85,33 +57,22 @@ nav {
       background-color: var(--nav-link-bg-colour-selected);
     }
   }
+}
 
-  > .mobile-nav {
-    visibility: hidden;
+.container {
+  grid-area: container;
+
+  > main {
+    padding: 5em;
+    padding-top: 1em;
   }
 }
 
-main {
-  padding: 5em;
-  padding-top: 1em;
+footer {
+  grid-area: footer;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  .centre();
 }
 
-
-/* Alignment */
-.centre {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.middle {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.left {
-  display: flex;
-  justify-content: left;
-  align-items: flex-end;
-}
+@import url('./media-queries/mq-main.less');

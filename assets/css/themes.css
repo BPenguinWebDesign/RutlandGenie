@@ -4,10 +4,14 @@
   --nav-link-text-colour: #595959;
   --nav-link-text-colour-selected: white;
   --nav-link-bg-colour-selected: #595959;
+  --nav-bg-colour: white;
+  --quotes-border-colour: var(--home-banner-bg-colour);
+  --quotes-bg-colour: #eeeeee;
 }
 .theme-home {
   --nav-link-text-colour: white;
-  --nav-link-text-colour-selected: var(--home-banner-bg-colour);
+  --nav-link-text-colour-selected: #595959;
   --nav-link-bg-colour-selected: white;
+  --nav-bg-colour: #595959;
 }
 /*# sourceMappingURL=themes.css.map */
