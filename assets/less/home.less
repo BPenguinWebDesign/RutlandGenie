@@ -1,19 +1,6 @@
 @import url('./main.less');
-@import url('./components/spacing.less');
 
 .container {
-  > section.home-banner:extend(.horizontal-pad-1) {
-    background-color: var(--home-banner-bg-colour);
-    color: var(--home-banner-font-colour);
-
-    text-align: center;
-    font-size: xx-large;
-    
-    padding: 20vh;
-
-    max-height: 85vh;
-  }
-
   > .mission:extend(.centre):extend(.text-centre) {
     height: 20vh;
   }
@@ -96,10 +83,6 @@
       }
     }
   }
-}
-
-nav {
-  background-color: var(--nav-bg-colour);
 }
 
 @import url('./media-queries/mq-home.less');

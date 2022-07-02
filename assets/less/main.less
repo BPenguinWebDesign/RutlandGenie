@@ -1,6 +1,7 @@
 @import url('./themes.less');
 @import url('./components/utils/alignment.less');
 @import url('./components/setup.less');
+@import url('./components/spacing.less');
 
 // Navbar
 nav {
@@ -59,6 +60,10 @@ nav {
   }
 }
 
+.theme-home nav {
+  background-color: var(--nav-bg-colour);
+}
+
 .container {
   grid-area: container;
 
@@ -66,13 +71,30 @@ nav {
     padding: 5em;
     padding-top: 1em;
   }
+
+  > section.banner:extend(.horizontal-pad-1) {
+    background-color: var(--home-banner-bg-colour);
+    color: var(--home-banner-font-colour);
+
+    text-align: center;
+    font-size: xx-large;
+    
+    padding: 20vh;
+
+    max-height: 85vh;
+  }
+
+  padding-bottom: 5vh;
 }
 
 footer {
-  grid-area: footer;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  .middle();
   .centre();
+
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 5vh;
 }
 
 @import url('./media-queries/mq-main.less');
