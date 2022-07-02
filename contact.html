@@ -11,7 +11,19 @@
 
     <link rel="stylesheet" href="/assets/css/contact.css">
 
-    <script defer src="/assets/js/main.js"></script>
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="">
+
+    <!-- Leaflet -->
+    <script defer src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script defer src="/assets/js/map.js"></script>
+
+    <noscript>
+      <style>
+        #noscript { display: block; }
+        #map { display: none; }
+      </style>
+    </noscript>
   </head>
   <body class="theme-home">
     <nav>
@@ -37,15 +49,15 @@
         <a href="/about">About</a>
       </div>
 
-      <div class="contact nav-item selected">
-        <a href="#">Contact</a>
-      </div>
-
       <div class="credentials nav-item">
         <a href="/credentials">Credentials</a>
       </div>
       <div class="policies nav-item">
         <a href="/policies">Policies</a>
+      </div>
+
+      <div class="contact nav-item selected">
+        <a href="#">Contact</a>
       </div>
     </nav>
 
@@ -65,11 +77,29 @@
         </section>
 
         <section class="email contact-box">
-          Email
+          <h1>Email</h1>
+          <div>
+            <a href="mailto:saragreytutoring@gmail.com">saragreytutoring@gmail.com</a>
+          </div>
         </section>
 
         <section class="map contact-box">
-          Map
+          <h1>Map</h1>
+          <div>
+            <div id="noscript">
+              <div>Please enable JavaScript to view this map</div>
+            </div>
+            <div id="map"></div>
+          </div>
+        </section>
+
+        <section class="service-area text-centre middle">
+          <p>Based in Barrowden, Rutland Genie Tutoring provides home tuition in the local area and internet tuition nationally.</p>
+
+          Rutland <br>
+          Northamptonshire: Corby <br>
+          Lincolnshire: Stamford <br>
+          Leicestershire
         </section>
       </main>
     </div>

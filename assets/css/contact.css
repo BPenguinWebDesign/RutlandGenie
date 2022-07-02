@@ -7,10 +7,13 @@
   --nav-bg-colour: white;
   --quotes-border-colour: var(--home-banner-bg-colour);
   --quotes-bg-colour: #eeeeee;
-  --about-img-border-colour: var(--home-banner-bg-colour);
+  --about-img-border-colour: var(--quotes-border-colour);
   --about-subtext-colour: #5d5f57;
-  --contact-box-border-colour: var(--home-banner-bg-colour);
+  --contact-box-border-colour: var(--quotes-border-colour);
   --contact-box-bg-colour: #eeeeee;
+  --link-colour: #0097a7;
+  --map-circle-outline-colour: #69c0c3;
+  --map-circle-fill-colour: #5e60ce;
 }
 .theme-home {
   --nav-link-text-colour: white;
@@ -21,14 +24,16 @@
 .centre,
 nav > .logo,
 nav > .nav-item,
-.container .contact-box > div {
+.container .contact-box > div,
+#noscript {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .middle,
 nav > .logo,
-.container .contact-box > div {
+.container .contact-box > div,
+#noscript {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -69,6 +74,9 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
 }
+a {
+  color: var(--link-colour);
+}
 body {
   font-family: 'Noto Sans', sans-serif;
   display: grid;
@@ -104,7 +112,8 @@ h6:not(.rootfont) {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.vertical-pad-1 {
+.vertical-pad-1,
+.container > main .service-area {
   padding-top: 1em;
   padding-bottom: 1em;
 }
@@ -126,7 +135,7 @@ nav {
   grid-auto-columns: 1fr;
   gap: 0.5em 0.5em;
   grid-auto-flow: row;
-  grid-template-areas: "logo spacing home about contact credentials policies";
+  grid-template-areas: "logo spacing home about credentials policies contact";
 }
 nav > .logo {
   grid-area: logo;
@@ -138,14 +147,14 @@ nav > .home {
 nav > .about {
   grid-area: about;
 }
-nav > .contact {
-  grid-area: contact;
-}
 nav > .credentials {
   grid-area: credentials;
 }
 nav > .policies {
   grid-area: policies;
+}
+nav > .contact {
+  grid-area: contact;
 }
 nav > .nav-item > a {
   text-decoration: none;
@@ -161,6 +170,13 @@ nav > .nav-item > a {
 nav > .nav-item.selected > a {
   color: var(--nav-link-text-colour-selected);
   background-color: var(--nav-link-bg-colour-selected);
+  opacity: 1;
+  transition: 0.3s;
+}
+nav > .nav-item:not(.selected) > a:hover {
+  background-color: var(--nav-link-bg-colour-selected);
+  color: var(--nav-link-text-colour-selected);
+  opacity: 0.7;
 }
 .theme-home nav {
   background-color: var(--nav-bg-colour);
@@ -191,56 +207,11 @@ footer {
   width: 100%;
   height: 5vh;
 }
-@media only screen and (max-width: 1080px) {
-  * {
-    font-size: 95%;
-  }
-  body > section.home-banner {
-    padding-left: 2em;
-    padding-right: 2em;
-  }
-  nav > .nav-link > a {
-    padding: 2em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-  }
-}
-@media only screen and (max-width: 900px) {
-  * {
-    font-size: 93%;
-  }
-  nav > .nav-link > a {
-    padding: 1em;
-  }
-}
-@media only screen and (max-width: 850px) {
-  * {
-    font-size: 90%;
-  }
-}
-@media only screen and (max-width: 770px) {
-  body > section.home-banner > * {
-    font-size: 80%;
-  }
-  body > section.home-banner {
-    padding-bottom: 15vh;
-  }
-  nav > div.centre {
-    display: none;
-  }
-  nav > .mobile-nav {
-    visibility: visible;
-  }
-}
-@media only screen and (max-width: 425px) {
-  nav > .logo > img {
-    max-height: 7vh;
-  }
-}
 .container {
   display: flex;
   flex-flow: column;
   height: 100%;
+  padding-bottom: 0;
 }
 .container > section.banner {
   padding-top: max(10vh, 1em);
@@ -248,14 +219,32 @@ footer {
 }
 .container > main {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  grid-auto-columns: 1fr;
-  gap: 3em 3em;
-  grid-auto-flow: row;
-  grid-template-areas: "phone email map";
+  grid-template-columns: minmax(0, 1fr) 2fr minmax(0, 1fr);
+  grid-template-rows: 50vh 1fr;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 1em 1em;
+  grid-auto-flow: column;
+  grid-template-areas: "phone map email" "service-area service-area service-area";
   height: 100%;
-  padding-bottom: 0;
+  padding: 1em;
+}
+.container > main .phone {
+  grid-area: phone;
+}
+.container > main .email {
+  grid-area: email;
+}
+.container > main .map {
+  grid-area: map;
+}
+.container > main .service-area {
+  grid-area: service-area;
+  background-color: var(--contact-box-bg-colour);
+  border: 2px solid var(--contact-box-border-colour);
+  font-size: x-large;
+}
+.container > main .service-area > p {
+  margin-top: 0;
 }
 .container .phone {
   grid-area: phone;
@@ -274,8 +263,21 @@ footer {
   font-size: 2em;
   margin-top: 0.5em;
 }
-.container .contact-box > div {
+.container .contact-box > div,
+#noscript {
   height: 100%;
   transform: translateY(-1em);
+  font-size: 1.5vw;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+#noscript {
+  height: min-content;
+  text-align: center;
+  display: none;
+}
+#map {
+  width: 100%;
+  height: 70%;
 }
 /*# sourceMappingURL=contact.css.map */
