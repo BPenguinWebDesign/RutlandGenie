@@ -23,7 +23,7 @@ nav {
   gap: 0.5em 0.5em;
   grid-auto-flow: row;
   grid-template-areas:
-    "logo spacing home about contact credentials policies";
+    "logo spacing home about credentials policies contact";
   
   > .logo:extend(.centre):extend(.middle) {
     grid-area: logo;
@@ -33,9 +33,9 @@ nav {
   // Set elements in their grid areas
   > .home { grid-area: home; }
   > .about { grid-area: about; }
-  > .contact { grid-area: contact; }
   > .credentials { grid-area: credentials; }
   > .policies { grid-area: policies; }
+  > .contact { grid-area: contact; }
 
   > .nav-item:extend(.centre) {
     > a {
@@ -56,6 +56,15 @@ nav {
     &.selected > a {
       color: var(--nav-link-text-colour-selected);
       background-color: var(--nav-link-bg-colour-selected);
+
+      opacity: 1.0;
+      transition: 0.3s;
+    }
+
+    &:not(.selected) > a:hover {
+      background-color: var(--nav-link-bg-colour-selected);
+      color: var(--nav-link-text-colour-selected);
+      opacity: 0.7;
     }
   }
 }

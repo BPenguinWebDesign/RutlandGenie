@@ -7,10 +7,13 @@
   --nav-bg-colour: white;
   --quotes-border-colour: var(--home-banner-bg-colour);
   --quotes-bg-colour: #eeeeee;
-  --about-img-border-colour: var(--home-banner-bg-colour);
+  --about-img-border-colour: var(--quotes-border-colour);
   --about-subtext-colour: #5d5f57;
-  --contact-box-border-colour: var(--home-banner-bg-colour);
+  --contact-box-border-colour: var(--quotes-border-colour);
   --contact-box-bg-colour: #eeeeee;
+  --link-colour: #0097a7;
+  --map-circle-outline-colour: #69c0c3;
+  --map-circle-fill-colour: #5e60ce;
 }
 .theme-home {
   --nav-link-text-colour: white;
