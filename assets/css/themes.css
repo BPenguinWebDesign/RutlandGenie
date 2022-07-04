@@ -1,24 +1,25 @@
 :root {
-  --home-banner-bg-colour: #807b76;
+  --border-colour: #43498a;
+  --contact-banner-bg-colour: #add19e;
+  --contact-banner-font-colour: black;
   --home-banner-font-colour: white;
-  --nav-link-text-colour: #595959;
+  --nav-link-text-colour: #43498a;
   --nav-link-text-colour-selected: white;
-  --nav-link-bg-colour-selected: #595959;
+  --nav-link-bg-colour-selected: #43498a;
   --nav-bg-colour: white;
-  --quotes-border-colour: var(--home-banner-bg-colour);
   --quotes-bg-colour: #eeeeee;
-  --about-img-border-colour: var(--quotes-border-colour);
   --about-subtext-colour: #5d5f57;
-  --contact-box-border-colour: var(--quotes-border-colour);
-  --contact-box-bg-colour: #eeeeee;
-  --link-colour: #0097a7;
-  --map-circle-outline-colour: #69c0c3;
+  --contact-box-bg-colour: #F0F1F8;
+  --credentials-box-bg-colour: #F0F1F8;
+  --credentials-tab-bg-colour: initial;
+  --link-colour: #5e60ce;
+  --map-circle-outline-colour: #43498a;
   --map-circle-fill-colour: #5e60ce;
 }
 .theme-home {
   --nav-link-text-colour: white;
-  --nav-link-text-colour-selected: #595959;
+  --nav-link-text-colour-selected: #43498a;
   --nav-link-bg-colour-selected: white;
-  --nav-bg-colour: #595959;
+  --nav-bg-colour: #43498a;
 }
 /*# sourceMappingURL=themes.css.map */

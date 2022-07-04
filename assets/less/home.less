@@ -1,13 +1,66 @@
 @import url('./main.less');
 
+.line() {
+  .border();
+  border-style: dashed;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+
+  height: 5%;
+}
+
 .container {
+  > section.banner {
+    background-image: 
+      linear-gradient(
+        rgba(0, 0, 50%, 25%),
+        rgba(0, 0, 50%, 25%)
+      ),
+      url(/assets/img/home-bg.jpg);
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    box-shadow: inset 0px 0px 15px -2px #000000;
+  }
+
   > .mission:extend(.centre):extend(.text-centre) {
-    height: 20vh;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 20vh;
+    gap: 0px 2em;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "line1 text line2";
+
+    font-size: 1.25em;
+
+    h1 {
+      grid-area: text;
+    }
+
+    .line1 {
+      .line();
+      grid-area: line1;
+    }
+
+    .line2 {
+      .line();
+      grid-area: line2;
+    }
   }
 
   > .quote-container:extend(.centre) {
-    border: 2px solid var(--quotes-border-colour);
-    background-color: var(--quotes-bg-colour);
+    .border();
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+
+    background-color: var(--contact-banner-bg-colour);
     
     > .quotes:extend(.centre):extend(.text-centre) {
       display: grid;

@@ -1,5 +1,12 @@
+@import (reference) url(../themes.less);
+
 // Make sizing play nicely
 * { box-sizing: border-box; }
+
+.border(@colour: var(--border-colour)) {
+  border-radius: 3px;
+  border: 2px solid @colour;
+}
 
 // Setup page layout
 html,body {

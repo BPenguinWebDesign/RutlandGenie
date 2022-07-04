@@ -1,5 +1,10 @@
 @import url('./main.less');
 
+nav {
+  box-shadow: 0px 0px 15px -2px #000000;
+  z-index: 1;
+}
+
 .container {
   display: flex;
   flex-flow: column;
@@ -10,6 +15,9 @@
   > section.banner {
     padding-top: max(10vh, 1em);
     padding-bottom: max(10vh, 1em);
+    
+    background-color: var(--contact-banner-bg-colour);
+    color: var(--contact-banner-font-colour);
   }
 
   > main {
@@ -38,8 +46,8 @@
     .service-area:extend(.vertical-pad-1) {
       grid-area: service-area;
       
-      background-color: var(--contact-box-bg-colour);
-      border: 2px solid var(--contact-box-border-colour);
+      background-color: var(--contact-banner-bg-colour);
+      .border();
 
       font-size: x-large;
 
@@ -56,8 +64,9 @@
   .map { grid-area: map; }
 
   .contact-box {
+    box-shadow: inset 0px 0px 5px -2px #000000;
     background-color: var(--contact-box-bg-colour);
-    border: 2px solid var(--contact-box-border-colour);
+    .border();
 
     > h1:extend(.text-centre) {
       font-size: 2em;
@@ -85,6 +94,7 @@
 #map {
   width: 100%;
   height: 70%;
+  .border(var(--contact-banner-bg-colour));
 }
 
-@import url('./media-queries/mq-about.less');
+@import url('./media-queries/mq-contact.less');
