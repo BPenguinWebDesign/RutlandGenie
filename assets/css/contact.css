@@ -10,8 +10,11 @@
   --quotes-bg-colour: #eeeeee;
   --about-subtext-colour: #5d5f57;
   --contact-box-bg-colour: #F0F1F8;
+  --credentials-tab-text-colour: #43498a;
+  --credentials-tab-text-colour-selected: white;
+  --credentials-tab-bg-colour-selected: #add19e;
+  --credentials-tab-bg-colour: #eeeeee;
   --credentials-box-bg-colour: #F0F1F8;
-  --credentials-tab-bg-colour: initial;
   --link-colour: #5e60ce;
   --map-circle-outline-colour: #43498a;
   --map-circle-fill-colour: #5e60ce;
