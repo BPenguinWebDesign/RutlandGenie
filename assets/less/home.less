@@ -11,6 +11,45 @@
   height: 5%;
 }
 
+.quote() {
+  &:extend(.text-centre);
+  flex-direction: row;
+  quotes: "“" "”";
+
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "q text";
+  
+  &::before {
+    display: inline-block;
+    content: open-quote;
+    font-family: Gulzar, Georgia, serif;
+    font-size: 15rem;
+
+    height: 100%;
+    width: 100%;
+    text-align: right;
+
+    margin-top: auto;
+    margin-bottom: auto;
+
+    grid-area: q;
+  }
+
+  > p {
+    font-size: 2rem;
+    grid-area: text;
+  }
+}
+
+footer {
+  margin-top: 2em;
+}
+
 .container {
   > section.banner {
     background-image: 
@@ -54,83 +93,77 @@
     }
   }
 
-  > .quote-container:extend(.centre) {
-    .border();
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
-
-    background-color: var(--contact-banner-bg-colour);
+  > section.quotes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: min-content repeat(2, 1fr);
+    gap: 4em 0;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "title title title title"
+      "quote-1 quote-1 quote-2 quote-2"
+      ". quote-3 quote-3 .";
     
-    > .quotes:extend(.centre):extend(.text-centre) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: min-content repeat(2, min-content);
-      grid-auto-columns: 1fr;
-      gap: 0px 0px;
-      grid-auto-flow: row;
-      grid-template-areas:
-        "title title"
-        "quote1 quote2"
-        "quote3 quote3";
-      
-      width: fit-content;
+    .border-only-top();
+    .border-only-bottom();
+    background-color: var(--quotes-bg-colour);
 
-      .title:extend(.vertical-pad-1) {
-        grid-area: title;
-        font-family: 'Raleway', sans-serif;
-        font-weight: 600;
-        margin-bottom: 2em;
+    padding-top: 2em;
+    padding-bottom: 3.4em;
+
+    h1:extend(.text-centre) {
+      grid-area: title;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+    }
+    
+    blockquote {
+      &.quote-1 {
+        grid-area: quote-1;
+        .quote();
       }
 
-      .quote1 { grid-area: quote1; }
-      .quote2 { grid-area: quote2; }
-      .quote3 {
-        grid-area: quote3;
-        margin-left: auto;
-        margin-right: auto;
+      &.quote-2 {
+        grid-area: quote-2;
+        .quote();
       }
-
-      > blockquote {
-        font-family: 'Raleway', sans-serif;
-        font-weight: normal;
-        font-style: italic;
-        font-size: x-large;
-
-        &:before {
-          font-family: 'Gulzar', serif;
-          content: '“';
-          font-size: 10em;
-          line-height: 0.1rem;
-          margin-right: 0.25em;
-          vertical-align: -0.55em;
-        }
-
-        > p {
-          display: inline;
-          line-height: 1rem;
-        }
+      &.quote-3 {
+        grid-area: quote-3;
+        .quote();
       }
     }
   }
 
-  > .info-panel:extend(.horizontal-pad-1):extend(.text-centre):extend(.centre) {
-    flex-direction: column;
 
-    margin-top: 3em;
+  .info-panels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1em 1em;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "panel-1 panel-2 panel-3";
+    
+    > .info-panel:extend(.horizontal-pad-1):extend(.text-centre):extend(.centre) {
+      flex-direction: column;
 
-    > h1 {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 600;
-      font-size: x-large;
-    }
+      margin-top: 3em;
 
-    > p {
-      width: 25%;
+      > h1 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: x-large;
+      }
+
+      > p {
+        width: 100%;
+      }
+
+      &.panel-1 { grid-area: 'panel1'; }
+      &.panel-2 { grid-area: 'panel-2'; }
+      &.panel-3 { grid-area: 'panel-3'; }
     }
   }
 }
-
-.quote { transform: translateX(-6.5%); }
 
 @import url('./media-queries/mq-home.less');

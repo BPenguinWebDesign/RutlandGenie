@@ -7,14 +7,13 @@
   --nav-link-text-colour-selected: white;
   --nav-link-bg-colour-selected: #43498a;
   --nav-bg-colour: white;
-  --quotes-bg-colour: #eeeeee;
+  --quotes-bg-colour: #add19e;
   --about-subtext-colour: #5d5f57;
   --contact-box-bg-colour: #F0F1F8;
-  --credentials-tab-text-colour: #43498a;
-  --credentials-tab-text-colour-selected: white;
-  --credentials-tab-bg-colour-selected: #add19e;
-  --credentials-tab-bg-colour: #eeeeee;
-  --credentials-box-bg-colour: #F0F1F8;
+  --credentials-tab-text-colour: black;
+  --credentials-tab-text-colour-selected: black;
+  --credentials-tab-bg-colour-selected: #F0F1F8;
+  --credentials-tab-bg-colour: #add19e;
   --link-colour: #5e60ce;
   --map-circle-outline-colour: #43498a;
   --map-circle-fill-colour: #5e60ce;
@@ -29,9 +28,7 @@
 nav > .logo,
 nav > .nav-item,
 .container > .mission,
-.container > .quote-container,
-.container > .quote-container > .quotes,
-.container > .info-panel {
+.container .info-panels > .info-panel {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,8 +54,11 @@ nav > .logo {
 }
 .text-centre,
 .container > .mission,
-.container > .quote-container > .quotes,
-.container > .info-panel {
+.container > section.quotes h1,
+.container > section.quotes blockquote.quote-1,
+.container > section.quotes blockquote.quote-2,
+.container > section.quotes blockquote.quote-3,
+.container .info-panels > .info-panel {
   text-align: center;
 }
 .text-right {
@@ -73,6 +73,7 @@ body {
   padding: 0;
   height: 100vh !important;
   width: 100vw !important;
+  overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -118,14 +119,13 @@ h6:not(.rootfont) {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.vertical-pad-1,
-.container > .quote-container > .quotes .title {
+.vertical-pad-1 {
   padding-top: 1em;
   padding-bottom: 1em;
 }
 .horizontal-pad-1,
 .container > section.banner,
-.container > .info-panel {
+.container .info-panels > .info-panel {
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -190,7 +190,6 @@ nav > .nav-item:not(.selected) > a:hover {
 }
 .container {
   grid-area: container;
-  padding-bottom: 5vh;
 }
 .container > main {
   padding: 5em;
@@ -214,6 +213,9 @@ footer {
   bottom: 0;
   width: 100%;
   height: 5vh;
+}
+footer {
+  margin-top: 2em;
 }
 .container > section.banner {
   background-image: linear-gradient(rgba(0, 0, 128, 0.25), rgba(0, 0, 128, 0.25)), url(/assets/img/home-bg.jpg);
@@ -257,72 +259,132 @@ footer {
   height: 5%;
   grid-area: line2;
 }
-.container > .quote-container {
-  border-radius: 3px;
-  border: 2px solid var(--border-colour);
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
-  background-color: var(--contact-banner-bg-colour);
-}
-.container > .quote-container > .quotes {
+.container > section.quotes {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: min-content repeat(2, min-content);
-  grid-auto-columns: 1fr;
-  gap: 0px 0px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: min-content repeat(2, 1fr);
+  gap: 4em 0;
   grid-auto-flow: row;
-  grid-template-areas: "title title" "quote1 quote2" "quote3 quote3";
-  width: fit-content;
+  grid-template-areas: "title title title title" "quote-1 quote-1 quote-2 quote-2" ". quote-3 quote-3 .";
+  border-top: 2px solid var(--border-colour);
+  border-bottom: 2px solid var(--border-colour);
+  background-color: var(--quotes-bg-colour);
+  padding-top: 2em;
+  padding-bottom: 3.4em;
 }
-.container > .quote-container > .quotes .title {
+.container > section.quotes h1 {
   grid-area: title;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
-  margin-bottom: 2em;
 }
-.container > .quote-container > .quotes .quote1 {
-  grid-area: quote1;
+.container > section.quotes blockquote.quote-1 {
+  grid-area: quote-1;
+  flex-direction: row;
+  quotes: "“" "”";
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "q text";
 }
-.container > .quote-container > .quotes .quote2 {
-  grid-area: quote2;
+.container > section.quotes blockquote.quote-1::before {
+  display: inline-block;
+  content: open-quote;
+  font-family: Gulzar, Georgia, serif;
+  font-size: 15rem;
+  height: 100%;
+  width: 100%;
+  text-align: right;
+  margin-top: auto;
+  margin-bottom: auto;
+  grid-area: q;
 }
-.container > .quote-container > .quotes .quote3 {
-  grid-area: quote3;
-  margin-left: auto;
-  margin-right: auto;
+.container > section.quotes blockquote.quote-1 > p {
+  font-size: 2rem;
+  grid-area: text;
 }
-.container > .quote-container > .quotes > blockquote {
-  font-family: 'Raleway', sans-serif;
-  font-weight: normal;
-  font-style: italic;
-  font-size: x-large;
+.container > section.quotes blockquote.quote-2 {
+  grid-area: quote-2;
+  flex-direction: row;
+  quotes: "“" "”";
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "q text";
 }
-.container > .quote-container > .quotes > blockquote:before {
-  font-family: 'Gulzar', serif;
-  content: '“';
-  font-size: 10em;
-  line-height: 0.1rem;
-  margin-right: 0.25em;
-  vertical-align: -0.55em;
+.container > section.quotes blockquote.quote-2::before {
+  display: inline-block;
+  content: open-quote;
+  font-family: Gulzar, Georgia, serif;
+  font-size: 15rem;
+  height: 100%;
+  width: 100%;
+  text-align: right;
+  margin-top: auto;
+  margin-bottom: auto;
+  grid-area: q;
 }
-.container > .quote-container > .quotes > blockquote > p {
-  display: inline;
-  line-height: 1rem;
+.container > section.quotes blockquote.quote-2 > p {
+  font-size: 2rem;
+  grid-area: text;
 }
-.container > .info-panel {
+.container > section.quotes blockquote.quote-3 {
+  grid-area: quote-3;
+  flex-direction: row;
+  quotes: "“" "”";
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "q text";
+}
+.container > section.quotes blockquote.quote-3::before {
+  display: inline-block;
+  content: open-quote;
+  font-family: Gulzar, Georgia, serif;
+  font-size: 15rem;
+  height: 100%;
+  width: 100%;
+  text-align: right;
+  margin-top: auto;
+  margin-bottom: auto;
+  grid-area: q;
+}
+.container > section.quotes blockquote.quote-3 > p {
+  font-size: 2rem;
+  grid-area: text;
+}
+.container .info-panels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1em 1em;
+  grid-auto-flow: row;
+  grid-template-areas: "panel-1 panel-2 panel-3";
+}
+.container .info-panels > .info-panel {
   flex-direction: column;
   margin-top: 3em;
 }
-.container > .info-panel > h1 {
+.container .info-panels > .info-panel > h1 {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: x-large;
 }
-.container > .info-panel > p {
-  width: 25%;
+.container .info-panels > .info-panel > p {
+  width: 100%;
 }
-.quote {
-  transform: translateX(-6.5%);
+.container .info-panels > .info-panel.panel-1 {
+  grid-area: 'panel1';
+}
+.container .info-panels > .info-panel.panel-2 {
+  grid-area: 'panel-2';
+}
+.container .info-panels > .info-panel.panel-3 {
+  grid-area: 'panel-3';
 }
 /*# sourceMappingURL=home.css.map */
