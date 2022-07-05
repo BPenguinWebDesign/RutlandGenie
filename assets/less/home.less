@@ -12,37 +12,29 @@
 }
 
 .quote() {
+  .border();
   &:extend(.text-centre);
-  flex-direction: row;
-  quotes: "“" "”";
+  
+  padding: 2em 1em;
+  background-color: var(--quotes-box-bg-colour);
+  border-radius: 3px;
+  
+  position: relative;
 
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-template-rows: min-content;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "q text";
+  font-size: 1.5vw;
+
+  box-shadow: inset 0px 0px 5px -2px #000000;
   
   &::before {
-    display: inline-block;
-    content: open-quote;
-    font-family: Gulzar, Georgia, serif;
-    font-size: 15rem;
+    font-family: 'Gulzar', 'Georgia', serif;
+    content: "“";
 
-    height: 100%;
-    width: 100%;
-    text-align: right;
+    font-size: 4vw;
+    opacity: 0.25;
 
-    margin-top: auto;
-    margin-bottom: auto;
-
-    grid-area: q;
-  }
-
-  > p {
-    font-size: 2rem;
-    grid-area: text;
+    position: absolute;
+    top: -1ex;
+    left: 20px;
   }
 }
 
@@ -97,19 +89,18 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: min-content repeat(2, 1fr);
-    gap: 4em 0;
+    gap: 1em;
     grid-auto-flow: row;
     grid-template-areas:
       "title title title title"
-      "quote-1 quote-1 quote-2 quote-2"
-      ". quote-3 quote-3 .";
+      "quote1 quote1 quote2 quote2"
+      ". quote3 quote3 .";
     
     .border-only-top();
     .border-only-bottom();
     background-color: var(--quotes-bg-colour);
 
-    padding-top: 2em;
-    padding-bottom: 3.4em;
+    padding: 1em;
 
     h1:extend(.text-centre) {
       grid-area: title;
@@ -119,16 +110,17 @@ footer {
     
     blockquote {
       &.quote-1 {
-        grid-area: quote-1;
+        grid-area: quote1;
         .quote();
       }
 
       &.quote-2 {
-        grid-area: quote-2;
+        grid-area: quote2;
         .quote();
       }
+
       &.quote-3 {
-        grid-area: quote-3;
+        grid-area: quote3;
         .quote();
       }
     }
@@ -137,17 +129,20 @@ footer {
 
   .info-panels {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 20vw 1fr 20vw;
     grid-template-rows: 1fr;
     gap: 1em 1em;
     grid-auto-flow: row;
     grid-template-areas:
       "panel1 panel2 panel3";
     
-    > .info-panel:extend(.horizontal-pad-1):extend(.text-centre):extend(.centre) {
+    > .info-panel:extend(.text-centre):extend(.centre) {
       flex-direction: column;
 
-      margin-top: 3em;
+      padding: 1em;
+
+      width: 100%;
+      height: 100%;
 
       > h1 {
         font-family: 'Raleway', sans-serif;
@@ -156,7 +151,8 @@ footer {
       }
 
       > p {
-        width: 100%;
+        width: 50%;
+        font-size: large;
       }
 
       &.panel-1 { grid-area: panel1; }
@@ -165,8 +161,8 @@ footer {
 
       > img {
         .border();
-      
         width: 100%;
+        box-shadow: 0px 0px 5px -2px #000000;
       }
     }
   }

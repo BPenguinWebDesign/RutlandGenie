@@ -8,6 +8,7 @@
   --nav-link-bg-colour-selected: #43498a;
   --nav-bg-colour: white;
   --quotes-bg-colour: #add19e;
+  --quotes-box-bg-colour: #F0F1F8;
   --about-subtext-colour: #5d5f57;
   --contact-box-bg-colour: #F0F1F8;
   --credentials-tab-text-colour: black;
@@ -124,8 +125,7 @@ h6:not(.rootfont) {
   padding-bottom: 1em;
 }
 .horizontal-pad-1,
-.container > section.banner,
-.container .info-panels > .info-panel {
+.container > section.banner {
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -263,14 +263,13 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: min-content repeat(2, 1fr);
-  gap: 4em 0;
+  gap: 1em;
   grid-auto-flow: row;
-  grid-template-areas: "title title title title" "quote-1 quote-1 quote-2 quote-2" ". quote-3 quote-3 .";
+  grid-template-areas: "title title title title" "quote1 quote1 quote2 quote2" ". quote3 quote3 .";
   border-top: 2px solid var(--border-colour);
   border-bottom: 2px solid var(--border-colour);
   background-color: var(--quotes-bg-colour);
-  padding-top: 2em;
-  padding-bottom: 3.4em;
+  padding: 1em;
 }
 .container > section.quotes h1 {
   grid-area: title;
@@ -278,89 +277,65 @@ footer {
   font-weight: 600;
 }
 .container > section.quotes blockquote.quote-1 {
-  grid-area: quote-1;
-  flex-direction: row;
-  quotes: "“" "”";
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-template-rows: min-content;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "q text";
+  grid-area: quote1;
+  border: 2px solid var(--border-colour);
+  padding: 2em 1em;
+  background-color: var(--quotes-box-bg-colour);
+  border-radius: 3px;
+  position: relative;
+  font-size: 1.5vw;
+  box-shadow: inset 0px 0px 5px -2px #000000;
 }
 .container > section.quotes blockquote.quote-1::before {
-  display: inline-block;
-  content: open-quote;
-  font-family: Gulzar, Georgia, serif;
-  font-size: 15rem;
-  height: 100%;
-  width: 100%;
-  text-align: right;
-  margin-top: auto;
-  margin-bottom: auto;
-  grid-area: q;
-}
-.container > section.quotes blockquote.quote-1 > p {
-  font-size: 2rem;
-  grid-area: text;
+  font-family: 'Gulzar', 'Georgia', serif;
+  content: "“";
+  font-size: 4vw;
+  opacity: 0.25;
+  position: absolute;
+  top: -1ex;
+  left: 20px;
 }
 .container > section.quotes blockquote.quote-2 {
-  grid-area: quote-2;
-  flex-direction: row;
-  quotes: "“" "”";
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-template-rows: min-content;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "q text";
+  grid-area: quote2;
+  border: 2px solid var(--border-colour);
+  padding: 2em 1em;
+  background-color: var(--quotes-box-bg-colour);
+  border-radius: 3px;
+  position: relative;
+  font-size: 1.5vw;
+  box-shadow: inset 0px 0px 5px -2px #000000;
 }
 .container > section.quotes blockquote.quote-2::before {
-  display: inline-block;
-  content: open-quote;
-  font-family: Gulzar, Georgia, serif;
-  font-size: 15rem;
-  height: 100%;
-  width: 100%;
-  text-align: right;
-  margin-top: auto;
-  margin-bottom: auto;
-  grid-area: q;
-}
-.container > section.quotes blockquote.quote-2 > p {
-  font-size: 2rem;
-  grid-area: text;
+  font-family: 'Gulzar', 'Georgia', serif;
+  content: "“";
+  font-size: 4vw;
+  opacity: 0.25;
+  position: absolute;
+  top: -1ex;
+  left: 20px;
 }
 .container > section.quotes blockquote.quote-3 {
-  grid-area: quote-3;
-  flex-direction: row;
-  quotes: "“" "”";
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-template-rows: min-content;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "q text";
+  grid-area: quote3;
+  border: 2px solid var(--border-colour);
+  padding: 2em 1em;
+  background-color: var(--quotes-box-bg-colour);
+  border-radius: 3px;
+  position: relative;
+  font-size: 1.5vw;
+  box-shadow: inset 0px 0px 5px -2px #000000;
 }
 .container > section.quotes blockquote.quote-3::before {
-  display: inline-block;
-  content: open-quote;
-  font-family: Gulzar, Georgia, serif;
-  font-size: 15rem;
-  height: 100%;
-  width: 100%;
-  text-align: right;
-  margin-top: auto;
-  margin-bottom: auto;
-  grid-area: q;
-}
-.container > section.quotes blockquote.quote-3 > p {
-  font-size: 2rem;
-  grid-area: text;
+  font-family: 'Gulzar', 'Georgia', serif;
+  content: "“";
+  font-size: 4vw;
+  opacity: 0.25;
+  position: absolute;
+  top: -1ex;
+  left: 20px;
 }
 .container .info-panels {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 20vw 1fr 20vw;
   grid-template-rows: 1fr;
   gap: 1em 1em;
   grid-auto-flow: row;
@@ -368,7 +343,9 @@ footer {
 }
 .container .info-panels > .info-panel {
   flex-direction: column;
-  margin-top: 3em;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
 }
 .container .info-panels > .info-panel > h1 {
   font-family: 'Raleway', sans-serif;
@@ -376,7 +353,8 @@ footer {
   font-size: x-large;
 }
 .container .info-panels > .info-panel > p {
-  width: 100%;
+  width: 50%;
+  font-size: large;
 }
 .container .info-panels > .info-panel.panel-1 {
   grid-area: panel1;
@@ -391,5 +369,6 @@ footer {
   border-radius: 3px;
   border: 2px solid var(--border-colour);
   width: 100%;
+  box-shadow: 0px 0px 5px -2px #000000;
 }
 /*# sourceMappingURL=home.css.map */

@@ -8,6 +8,7 @@
   --nav-link-bg-colour-selected: #43498a;
   --nav-bg-colour: white;
   --quotes-bg-colour: #add19e;
+  --quotes-box-bg-colour: #F0F1F8;
   --about-subtext-colour: #5d5f57;
   --contact-box-bg-colour: #F0F1F8;
   --credentials-tab-text-colour: black;
@@ -248,6 +249,7 @@ nav {
 }
 .container > main .service-area {
   grid-area: service-area;
+  box-shadow: inset 0px 0px 5px -2px #000000;
   background-color: var(--contact-banner-bg-colour);
   border-radius: 3px;
   border: 2px solid var(--border-colour);
