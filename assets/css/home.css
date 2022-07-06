@@ -3,6 +3,7 @@
   --contact-banner-bg-colour: #add19e;
   --contact-banner-font-colour: black;
   --home-banner-font-colour: white;
+  --home-mission-bg-colour: #F0F1F8;
   --nav-link-text-colour: #43498a;
   --nav-link-text-colour-selected: white;
   --nav-link-bg-colour-selected: #43498a;
@@ -235,6 +236,10 @@ footer {
   gap: 0px 2em;
   grid-auto-flow: row;
   grid-template-areas: "line1 text line2";
+  box-shadow: inset 0px 0px 5px -2px #000000;
+  background-color: var(--home-mission-bg-colour);
+  border-radius: 3px;
+  margin: 1em;
   font-size: 1.25em;
 }
 .container > .mission h1 {
@@ -339,7 +344,7 @@ footer {
 }
 .container .info-panels {
   display: grid;
-  grid-template-columns: 20vw 1fr 20vw;
+  grid-template-columns: 25vw 1fr 25vw;
   grid-template-rows: 1fr;
   gap: 1em 1em;
   grid-auto-flow: row;
@@ -357,7 +362,7 @@ footer {
   font-size: xx-large;
 }
 .container .info-panels > .info-panel > p {
-  width: 50%;
+  width: 75%;
   font-size: large;
 }
 .container .info-panels > .info-panel.panel-1 {
