@@ -8,7 +8,10 @@
   --nav-link-bg-colour-selected: #43498a;
   --nav-bg-colour: white;
   --quotes-bg-colour: #add19e;
-  --quotes-box-bg-colour: #F0F1F8;
+  --quotes-box-bg-colour: #a7ce97;
+  --policies-banner-bg-colour: #add19e;
+  --policies-banner-font-colour: black;
+  --policies-box-bg-colour: #F0F1F8;
   --about-subtext-colour: #5d5f57;
   --contact-box-bg-colour: #F0F1F8;
   --credentials-tab-text-colour: black;
@@ -280,7 +283,7 @@ nav {
 .container .contact-box > div,
 #noscript {
   height: 100%;
-  transform: translateY(-1em);
+  transform: translateY(-2ex);
   font-size: 1.5vw;
   margin-left: 2em;
   margin-right: 2em;

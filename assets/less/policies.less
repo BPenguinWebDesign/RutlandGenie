@@ -1,5 +1,51 @@
 @import url('./main.less');
 
+nav {
+  box-shadow: 0px 0px 15px -2px #000000;
+  z-index: 1;
+}
 
+.container {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+
+  > section.banner {
+    padding-top: max(10vh, 1em);
+    padding-bottom: max(10vh, 1em);
+
+    background-color: var(--policies-banner-bg-colour);
+    color: var(--policies-banner-font-colour);
+  }
+
+  > main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 1em 1em;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "pb1 pb2 pb3"
+      "pb4 pb5 pb6";
+    
+    height: 100%;
+    padding: 1em;
+  }
+
+  .policy-box:extend(.text-centre):extend(.centre) {
+    box-shadow: inset 0px 0px 5px -2px #000000;
+    background-color: var(--policies-box-bg-colour);
+    .border();
+    font-size: 1.5vw;
+  }
+}
+
+.pb1 { grid-area: pb1; }
+.pb2 { grid-area: pb2; }
+.pb3 { grid-area: pb3; }
+.pb4 { grid-area: pb4; }
+.pb5 { grid-area: pb5; }
+.pb6 { grid-area: pb6; }
 
 @import url('./media-queries/mq-policies.less');

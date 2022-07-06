@@ -12,16 +12,12 @@
 }
 
 .quote() {
-  .border();
-  &:extend(.text-centre);
+  border-radius: 3px;
   
   padding: 2em 1em;
   background-color: var(--quotes-box-bg-colour);
-  border-radius: 3px;
   
   position: relative;
-
-  font-size: 1.5vw;
 
   box-shadow: inset 0px 0px 5px -2px #000000;
   
@@ -29,12 +25,15 @@
     font-family: 'Gulzar', 'Georgia', serif;
     content: "“";
 
-    font-size: 4vw;
-    opacity: 0.25;
+    font-size: 8vw;
 
     position: absolute;
-    top: -1ex;
+    top: -1.2ex;
     left: 20px;
+  }
+
+  > p:extend(.text-centre) {
+    font-size: 1.5vw;
   }
 }
 
@@ -89,7 +88,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: min-content repeat(2, 1fr);
-    gap: 1em;
+    gap: 1.5em;
     grid-auto-flow: row;
     grid-template-areas:
       "title title title title"
@@ -106,6 +105,7 @@ footer {
       grid-area: title;
       font-family: 'Raleway', sans-serif;
       font-weight: 600;
+      font-size: xx-large;
     }
     
     blockquote {
@@ -147,7 +147,7 @@ footer {
       > h1 {
         font-family: 'Raleway', sans-serif;
         font-weight: 600;
-        font-size: x-large;
+        font-size: xx-large;
       }
 
       > p {

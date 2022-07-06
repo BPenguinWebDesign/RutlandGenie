@@ -8,7 +8,10 @@
   --nav-link-bg-colour-selected: #43498a;
   --nav-bg-colour: white;
   --quotes-bg-colour: #add19e;
-  --quotes-box-bg-colour: #F0F1F8;
+  --quotes-box-bg-colour: #a7ce97;
+  --policies-banner-bg-colour: #add19e;
+  --policies-banner-font-colour: black;
+  --policies-box-bg-colour: #F0F1F8;
   --about-subtext-colour: #5d5f57;
   --contact-box-bg-colour: #F0F1F8;
   --credentials-tab-text-colour: black;
@@ -56,9 +59,9 @@ nav > .logo {
 .text-centre,
 .container > .mission,
 .container > section.quotes h1,
-.container > section.quotes blockquote.quote-1,
-.container > section.quotes blockquote.quote-2,
-.container > section.quotes blockquote.quote-3,
+.container > section.quotes blockquote.quote-1 > p,
+.container > section.quotes blockquote.quote-2 > p,
+.container > section.quotes blockquote.quote-3 > p,
 .container .info-panels > .info-panel {
   text-align: center;
 }
@@ -263,7 +266,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: min-content repeat(2, 1fr);
-  gap: 1em;
+  gap: 1.5em;
   grid-auto-flow: row;
   grid-template-areas: "title title title title" "quote1 quote1 quote2 quote2" ". quote3 quote3 .";
   border-top: 2px solid var(--border-colour);
@@ -275,63 +278,64 @@ footer {
   grid-area: title;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
+  font-size: xx-large;
 }
 .container > section.quotes blockquote.quote-1 {
   grid-area: quote1;
-  border: 2px solid var(--border-colour);
+  border-radius: 3px;
   padding: 2em 1em;
   background-color: var(--quotes-box-bg-colour);
-  border-radius: 3px;
   position: relative;
-  font-size: 1.5vw;
   box-shadow: inset 0px 0px 5px -2px #000000;
 }
 .container > section.quotes blockquote.quote-1::before {
   font-family: 'Gulzar', 'Georgia', serif;
   content: "“";
-  font-size: 4vw;
-  opacity: 0.25;
+  font-size: 8vw;
   position: absolute;
-  top: -1ex;
+  top: -1.2ex;
   left: 20px;
+}
+.container > section.quotes blockquote.quote-1 > p {
+  font-size: 1.5vw;
 }
 .container > section.quotes blockquote.quote-2 {
   grid-area: quote2;
-  border: 2px solid var(--border-colour);
+  border-radius: 3px;
   padding: 2em 1em;
   background-color: var(--quotes-box-bg-colour);
-  border-radius: 3px;
   position: relative;
-  font-size: 1.5vw;
   box-shadow: inset 0px 0px 5px -2px #000000;
 }
 .container > section.quotes blockquote.quote-2::before {
   font-family: 'Gulzar', 'Georgia', serif;
   content: "“";
-  font-size: 4vw;
-  opacity: 0.25;
+  font-size: 8vw;
   position: absolute;
-  top: -1ex;
+  top: -1.2ex;
   left: 20px;
+}
+.container > section.quotes blockquote.quote-2 > p {
+  font-size: 1.5vw;
 }
 .container > section.quotes blockquote.quote-3 {
   grid-area: quote3;
-  border: 2px solid var(--border-colour);
+  border-radius: 3px;
   padding: 2em 1em;
   background-color: var(--quotes-box-bg-colour);
-  border-radius: 3px;
   position: relative;
-  font-size: 1.5vw;
   box-shadow: inset 0px 0px 5px -2px #000000;
 }
 .container > section.quotes blockquote.quote-3::before {
   font-family: 'Gulzar', 'Georgia', serif;
   content: "“";
-  font-size: 4vw;
-  opacity: 0.25;
+  font-size: 8vw;
   position: absolute;
-  top: -1ex;
+  top: -1.2ex;
   left: 20px;
+}
+.container > section.quotes blockquote.quote-3 > p {
+  font-size: 1.5vw;
 }
 .container .info-panels {
   display: grid;
@@ -350,7 +354,7 @@ footer {
 .container .info-panels > .info-panel > h1 {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
-  font-size: x-large;
+  font-size: xx-large;
 }
 .container .info-panels > .info-panel > p {
   width: 50%;
