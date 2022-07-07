@@ -4,10 +4,10 @@
   --contact-banner-font-colour: black;
   --home-banner-font-colour: white;
   --home-mission-bg-colour: #F0F1F8;
-  --nav-link-text-colour: #43498a;
-  --nav-link-text-colour-selected: white;
-  --nav-link-bg-colour-selected: #43498a;
-  --nav-bg-colour: white;
+  --nav-link-text-colour: white;
+  --nav-link-text-colour-selected: #43498a;
+  --nav-link-bg-colour-selected: white;
+  --nav-bg-colour: #43498a;
   --quotes-bg-colour: #add19e;
   --quotes-box-bg-colour: #a7ce97;
   --policies-banner-bg-colour: #add19e;
@@ -22,12 +22,6 @@
   --link-colour: #5e60ce;
   --map-circle-outline-colour: #43498a;
   --map-circle-fill-colour: #5e60ce;
-}
-.theme-home {
-  --nav-link-text-colour: white;
-  --nav-link-text-colour-selected: #43498a;
-  --nav-link-bg-colour-selected: white;
-  --nav-bg-colour: #43498a;
 }
 .centre,
 nav > .logo,
@@ -135,6 +129,7 @@ nav {
   grid-area: nav;
   width: 100vw;
   color: var(--home-banner-font-colour);
+  background-color: var(--nav-bg-colour);
   padding-left: 2em;
   padding-right: 2em;
   height: 15vh;
@@ -186,9 +181,6 @@ nav > .nav-item:not(.selected) > a:hover {
   background-color: var(--nav-link-bg-colour-selected);
   color: var(--nav-link-text-colour-selected);
   opacity: 0.7;
-}
-.theme-home nav {
-  background-color: var(--nav-bg-colour);
 }
 .container {
   grid-area: container;
@@ -260,7 +252,8 @@ nav {
   font-size: x-large;
 }
 .container > main .service-area > p {
-  margin-top: 0;
+  margin: 0;
+  padding: 1em;
 }
 .container .phone {
   grid-area: phone;
