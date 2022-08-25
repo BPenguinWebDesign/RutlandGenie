@@ -9,7 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600;700&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
 
+    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <link rel="stylesheet" href="/assets/css/contact.css">
+    <script defer src="/assets/js/mobile-menu.js"></script>
 
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="">
@@ -27,37 +31,46 @@
   </head>
   <body>
     <nav>
-      <div class="logo">
-        <img srcset="/assets/img/logo-160.png 160w,
-                     /assets/img/logo-240.png 240w,
-                     /assets/img/logo-320.png 320w,
-                     /assets/img/logo-480.png 480w,
-                     /assets/img/logo-640.png 640w"
-             
-             sizes="20vw"
-             
-	           src="/assets/img/logo-640.png"
-	           alt="Logo Image"
-             width="100%">
+      <div class="desktop-menu fade-out-menu">
+        <div class="logo">
+          <img srcset="/assets/img/logo-160.png 160w,
+                             /assets/img/logo-240.png 240w,
+                             /assets/img/logo-320.png 320w,
+                             /assets/img/logo-480.png 480w,
+                             /assets/img/logo-640.png 640w" sizes="20vw" src="/assets/img/logo-640.png" alt="Logo Image"
+            width="100%">
+        </div>
+        
+        <div class="home nav-item">
+          <a href="/">Home</a>
+        </div>
+        
+        <div class="about nav-item">
+          <a href="/about">About</a>
+        </div>
+        
+        <div class="credentials nav-item">
+          <a href="/credentials">Credentials</a>
+        </div>
+        <div class="policies nav-item">
+          <a href="/policies">Policies</a>
+        </div>
+        
+        <div class="contact nav-item selected">
+          <a href="#">Contact</a>
+        </div>
       </div>
 
-      <div class="home nav-item">
-        <a href="/">Home</a>
-      </div>
-
-      <div class="about nav-item">
-        <a href="/about">About</a>
-      </div>
-
-      <div class="credentials nav-item">
-        <a href="/credentials">Credentials</a>
-      </div>
-      <div class="policies nav-item">
-        <a href="/policies">Policies</a>
-      </div>
-
-      <div class="contact nav-item selected">
-        <a href="#">Contact</a>
+      <div class="mobile-menu" hidden>
+        <a href="/mobile-menu"><span class="material-icons">menu</span></a>
+        
+        <section role="navigation">
+          <div><a href="/">Home</a></div>
+          <div><a href="/about">About</a></div>
+          <div><a href="/credentials">Credentials</a></div>
+          <div><a href="/policies">Policies</a></div>
+          <div><a class="selected" href="#">Contact</a></div>
+        </section>
       </div>
     </nav>
 
@@ -99,6 +112,6 @@
       </main>
     </div>
 
-    <footer>Copyright © Rutland Genie. All rights reserved.</footer>
+    <footer><span>Copyright © Rutland Genie.</span> <span>All rights reserved.</span></footer>
   </body>
 </html>

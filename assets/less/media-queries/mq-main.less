@@ -1,0 +1,135 @@
+@media screen and (max-width: 1240px) {
+  nav > .desktop-menu {
+    > .nav-item {
+      > a {
+        font-size: medium;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  nav > .desktop-menu {
+    > .nav-item {
+      > a {
+        padding: 1.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  :root {
+    --menu-height: 12vh;
+  }
+
+  nav > .desktop-menu {
+    grid-template-columns: 1fr min-content min-content min-content min-content min-content;
+    grid-template-areas:
+      "logo home about credentials policies contact";
+    
+    > .logo {
+      margin-top: 1em;
+      margin-bottom: 1em;
+
+      > img {
+        width: unset;
+        height: 100%;
+        align-self: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  nav > .desktop-menu {
+    > .logo {
+      margin-top: 1em;
+      margin-bottom: 1em;
+
+      > img {
+        width: unset;
+        height: 100%;
+        align-self: flex-start;
+      }
+    }
+
+    > .nav-item {
+      > a {
+        padding: 1em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .container > section.banner {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  nav > .desktop-menu {
+    gap: 0;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  nav {
+    > .desktop-menu {
+      > .nav-item {
+        display: none;
+      }
+    }
+
+    > .mobile-menu {
+      display: block;
+      transition-duration: 1s;
+    }
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .container > section.banner > div > p {
+    padding-top: 2em;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .container > section.banner {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  footer {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    > span {
+      display: block;
+      text-align: center;
+      top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  nav > .mobile-menu {
+    > section {
+      padding-top: 7.5vh;
+      
+      > div {
+        width: 75%;
+      }
+    }
+  }
+}

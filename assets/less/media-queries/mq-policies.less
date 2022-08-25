@@ -1,0 +1,67 @@
+@media screen and (max-width: 1420px) {
+  .container > main > .policy-box {
+    font-size: 1.25em;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container > main > .policy-box {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container > main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+    grid-template-areas:
+      "pb1 pb2"
+      "pb3 pb4"
+      "pb5 pb6";
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .container > main > .policy-box {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .container > main > .policy-box {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .container > main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    
+    grid-template-areas:
+      "pb1"
+      "pb2"
+      "pb3"
+      "pb4"
+      "pb5"
+      "pb6";
+    
+    .policy-box {
+      .vertical-pad-1();
+      font-size: 1.25em;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container > main > .policy-box {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container > main > .policy-box {
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,46 @@
+@import url('./themes.less');
+@import url('./components/utils/alignment.less');
+@import url('./components/setup.less');
+
+nav {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0px 0px;
+  justify-content: space-around;
+  align-content: space-evenly;
+  justify-items: start;
+  align-items: center;
+
+  background-color: var(--mobile-nav-menu-bg-colour-start);
+
+  background: radial-gradient(circle at 93.5% 5.7%,
+      var(--mobile-nav-menu-bg-colour-end) 0%,
+      var(--mobile-nav-menu-bg-colour-end) 5%,
+      var(--mobile-nav-menu-bg-colour-start) 95%,
+      var(--mobile-nav-menu-bg-colour-start) 100%,
+    );
+
+  > div {
+    width: 50%;
+    margin: auto;
+
+    > a:extend(.centre) {
+      text-decoration: none;
+      color: var(--nav-link-text-colour-selected);
+      background-color: var(--nav-link-bg-colour-selected);
+      font-size: larger;
+      font-weight: bold;
+
+      padding: 2em;
+      margin: 5px;
+
+      border-radius: 10px;
+
+      opacity: 0.7;
+    }
+  }
+}

@@ -3,11 +3,13 @@
 @colour-tertiary: #add19e;
 @colour-quaternary: #F0F1F8;
 
+@quotes-box-bg-darken-factor: 2%;
+
 :root {
   --border-colour: @colour-primary;
   --contact-banner-bg-colour: @colour-tertiary;
   --contact-banner-font-colour: black;
-  --home-banner-font-colour: white;
+  --home-banner-font-colour: @colour-secondary;
 
   --home-mission-bg-colour: @colour-quaternary;
 
@@ -16,8 +18,15 @@
   --nav-link-bg-colour-selected: @colour-secondary;
   --nav-bg-colour: @colour-primary;
 
+  --mobile-nav-btn-bg-colour: @colour-tertiary;
+  --mobile-nav-btn-border-colour: @colour-quaternary;
+  --mobile-nav-btn-icon-colour: @colour-primary;
+
+  --mobile-nav-menu-bg-colour-start: @colour-primary;
+  --mobile-nav-menu-bg-colour-end: @colour-tertiary;
+
   --quotes-bg-colour: @colour-tertiary;
-  --quotes-box-bg-colour: darken(@colour-tertiary, 2%);
+  --quotes-box-bg-colour: darken(@colour-tertiary, @quotes-box-bg-darken-factor);
 
   --policies-banner-bg-colour: @colour-tertiary;
   --policies-banner-font-colour: black;
@@ -36,4 +45,6 @@
 
   --map-circle-outline-colour: @colour-primary;
   --map-circle-fill-colour: #5e60ce;
+
+  --menu-height: max(15vh, 60px);
 }

@@ -8,52 +8,64 @@
     <link rel="preload" href="/assets/css/home.css" as="style">
     <link rel="preload" href="/assets/img/home-bg.jpg" as="image">
 
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Gulzar" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600;700&family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Raleway:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/home.css">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gulzar">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <link href="https://fonts.googleapis.com/css2?family=Gulzar" rel="preload" as="style" onload="this.onload='';this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gulzar"></noscript>
+    <link rel="stylesheet" href="/assets/css/home.css">
 
     <script defer src="assets/js/yearssince.js"></script>
+    <script defer src="/assets/js/mobile-menu.js"></script>
   </head>
   <body>
     <nav>
-      <div class="logo">
-        <img srcset="/assets/img/logo-160.png 160w,
-                     /assets/img/logo-240.png 240w,
-                     /assets/img/logo-320.png 320w,
-                     /assets/img/logo-480.png 480w,
-                     /assets/img/logo-640.png 640w"
-             
-             sizes="25vmin"
-             
-	           src="/assets/img/logo-640.png"
-	           alt="Logo Image"
-             width="100%">
+      <div class="desktop-menu fade-out-menu">
+        <div class="logo">
+          <img srcset="/assets/img/logo-160.png 160w,
+                             /assets/img/logo-240.png 240w,
+                             /assets/img/logo-320.png 320w,
+                             /assets/img/logo-480.png 480w,
+                             /assets/img/logo-640.png 640w" sizes="25vmin" src="/assets/img/logo-640.png" alt="Logo Image"
+            width="100%">
+        </div>
+        
+        <div class="home nav-item selected">
+          <a href="#">Home</a>
+        </div>
+        
+        <div class="about nav-item">
+          <a href="/about">About</a>
+        </div>
+        
+        <div class="credentials nav-item">
+          <a href="/credentials">Credentials</a>
+        </div>
+        
+        <div class="policies nav-item">
+          <a href="/policies">Policies</a>
+        </div>
+        
+        <div class="contact nav-item">
+          <a href="/contact">Contact</a>
+        </div>
       </div>
 
-      <div class="home nav-item selected">
-        <a href="#">Home</a>
-      </div>
-
-      <div class="about nav-item">
-        <a href="/about">About</a>
-      </div>
-
-      <div class="credentials nav-item">
-        <a href="/credentials">Credentials</a>
-      </div>
-
-      <div class="policies nav-item">
-        <a href="/policies">Policies</a>
-      </div>
-      
-      <div class="contact nav-item">
-        <a href="/contact">Contact</a>
+      <div class="mobile-menu" hidden>
+        <a href="/mobile-menu"><span class="material-icons">menu</span></a>
+        
+        <section role="navigation">
+          <div><a class="selected" href="#">Home</a></div>
+          <div><a href="/about">About</a></div>
+          <div><a href="/credentials">Credentials</a></div>
+          <div><a href="/policies">Policies</a></div>
+          <div><a href="/contact">Contact</a></div>
+        </section>
       </div>
     </nav>
 
@@ -133,6 +145,6 @@
       </section>
     </div>
 
-    <footer>Copyright © Rutland Genie. All rights reserved.</footer>
+    <footer><span>Copyright © Rutland Genie.</span> <span>All rights reserved.</span></footer>
   </body>
 </html>

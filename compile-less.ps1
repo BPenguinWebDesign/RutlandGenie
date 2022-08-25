@@ -8,7 +8,7 @@ Get-ChildItem .\ *.html | Foreach-Object {
     $filename = "home"
   }
   
-  lessc --source-map ./assets/less/$filename.less ./assets/css/$filename.css
+  lessc --source-map ./assets/less/$filename.less --autoprefix="> 0.2%, not dead, last 3 versions" ./assets/css/$filename.css
 }
 
 Write-Output 'Compiled Less to CSS'
