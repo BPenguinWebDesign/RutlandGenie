@@ -328,7 +328,7 @@ nav > .mobile-menu > input:checked ~ label > span {
   text-align: center;
   font-size: xx-large;
   padding: 20vh;
-  min-height: 60vh;
+  max-height: 85vh;
   width: 100%;
 }
 footer {

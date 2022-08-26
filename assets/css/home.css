@@ -328,7 +328,7 @@ nav > .mobile-menu > input:checked ~ label > span {
   text-align: center;
   font-size: xx-large;
   padding: 20vh;
-  min-height: 60vh;
+  max-height: 85vh;
   width: 100%;
 }
 footer {
@@ -466,6 +466,7 @@ footer {
   -webkit-transform: translateY(-1px);
       -ms-transform: translateY(-1px);
           transform: translateY(-1px);
+  min-height: 60vh;
 }
 .container > .mission {
   display: grid;
