@@ -310,6 +310,7 @@ nav > .mobile-menu > input:checked ~ label > span {
 }
 .container {
   grid-area: container;
+  width: 100%;
 }
 .container > main,
 .container {
@@ -323,8 +324,8 @@ nav > .mobile-menu > input:checked ~ label > span {
   text-align: center;
   font-size: xx-large;
   padding: 20vh;
-  max-height: 85vh;
-  max-width: 100vw;
+  min-height: 60vh;
+  width: 100%;
 }
 footer {
   grid-area: footer;
@@ -412,9 +413,12 @@ footer > span {
             transition-duration: 1s;
   }
 }
-@media screen and (max-width: 490px) {
-  .container > section.banner > div > p {
-    padding-top: 2em;
+@media screen and (max-width: 400px) {
+  .container > section.banner {
+    font-size: x-large;
+  }
+  .container > section.mission {
+    font-size: 1em;
   }
 }
 @media screen and (max-width: 460px) {

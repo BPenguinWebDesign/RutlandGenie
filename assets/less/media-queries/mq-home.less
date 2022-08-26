@@ -1,0 +1,97 @@
+@media screen and (max-width: 1100px) {
+  .container > section.quotes > blockquote.quote > p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container > section.quotes {
+    gap: 0.5em 0.5em;
+  }
+}
+
+@media screen and (max-width: 825px) {
+  .container > section.quotes > blockquote.quote {
+    &::before {
+      font-size: 10vw;
+    }
+
+    > p {
+      font-size: 2.5vw;
+    }
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .container {
+    > .info-panels {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, min-content);
+      gap: 1em 0;
+      grid-template-areas:
+        "title title"
+        "panel2 panel2"
+        "panel1 panel3";
+      
+      > .info-panel {
+        &.panel-2, &.panel-2 > p {
+          margin-top: 0;
+        }
+
+        &.panel-1 {
+          padding: 0.25em;
+          padding-left: 0.5em;
+        }
+        
+        &.panel-3 {
+          padding: 0.25em;
+          padding-right: 0.5em;
+        }
+      }
+    }
+
+    > section.quotes {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, min-content);
+      grid-template-areas:
+        "title"
+        "quote1"
+        "quote2"
+        "quote3";
+      
+      padding-left: 1.2em;
+      padding-right: 1.2em;
+      
+      > blockquote.quote {
+        margin-left: 0;
+        margin-right: 0;
+
+        &::before {
+          font-size: 16vw;
+        }
+
+        > p {
+          font-size: 3.5vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .container > section.quotes {
+    > h1 {
+      font-size: x-large;
+    }
+
+    > blockquote.quote > p {
+      font-size: 4vw;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container > section.quotes > blockquote.quote > p {
+    font-size: 5vw;
+  }
+}

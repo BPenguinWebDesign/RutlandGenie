@@ -11,32 +11,6 @@
   height: 5%;
 }
 
-.quote() {
-  border-radius: 3px;
-  
-  padding: 2em 1em;
-  background-color: var(--quotes-box-bg-colour);
-  
-  position: relative;
-
-  box-shadow: inset 0px 0px 5px -2px #000000;
-  
-  &::before {
-    font-family: 'Gulzar', 'Georgia', serif;
-    content: "“";
-
-    font-size: 8vw;
-
-    position: absolute;
-    top: -1.2ex;
-    left: 20px;
-  }
-
-  > p:extend(.text-centre) {
-    font-size: 1.5vw;
-  }
-}
-
 footer {
   margin-top: 2em;
 }
@@ -63,7 +37,7 @@ footer {
   > .mission:extend(.centre):extend(.text-centre) {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: 20vh;
+    grid-template-rows: minmax(20vh, min-content);
     gap: 0px 2em;
     grid-auto-flow: row;
     grid-template-areas:
@@ -96,7 +70,7 @@ footer {
   > section.quotes {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: min-content repeat(2, 1fr);
+    grid-template-rows: min-content repeat(2, min-content);
     gap: 1.5em;
     grid-auto-flow: row;
     grid-template-areas:
@@ -116,33 +90,55 @@ footer {
       font-weight: 600;
       font-size: xx-large;
     }
-    
-    blockquote {
+
+    blockquote.quote {
+      border-radius: 3px;
+      
+      padding: 2em 1em;
+      background-color: var(--quotes-box-bg-colour);
+      
+      position: relative;
+      
+      box-shadow: inset 0px 0px 5px -2px #000000;
+      
+      &::before {
+        font-family: 'Gulzar', 'Georgia', serif;
+        content: "“";
+        
+        font-size: 8vw;
+        
+        position: absolute;
+        top: -1.2ex;
+        left: 20px;
+      }
+      
+      >p:extend(.text-centre) {
+        font-size: 1.5vw;
+      }
+      
       &.quote-1 {
         grid-area: quote1;
-        .quote();
       }
 
       &.quote-2 {
         grid-area: quote2;
-        .quote();
       }
 
       &.quote-3 {
         grid-area: quote3;
-        .quote();
       }
     }
   }
 
 
-  .info-panels {
+  > .info-panels {
     display: grid;
     grid-template-columns: 25vw 1fr 25vw;
-    grid-template-rows: 1fr;
-    gap: 1em 1em;
+    grid-template-rows: min-content 1fr;
+    gap: 0 1em;
     grid-auto-flow: row;
     grid-template-areas:
+      "title title title"
       "panel1 panel2 panel3";
     
     > .info-panel:extend(.text-centre):extend(.centre) {
@@ -167,6 +163,7 @@ footer {
       &.panel-1 { grid-area: panel1; }
       &.panel-2 { grid-area: panel2; }
       &.panel-3 { grid-area: panel3; }
+      &.panel-title { grid-area: title; }
 
       > img {
         .border();
