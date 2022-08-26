@@ -5,18 +5,22 @@ nav {
   margin-bottom: 2em;
 }
 
-.container:extend(.container > main) {
+.container {
   display: grid;
-  grid-template-columns: 1fr 20vw;
+  grid-template-columns: 1fr;
   grid-template-rows: min-content min-content 1fr min-content;
   grid-auto-columns: 1fr;
   gap: 0px 2em;
   grid-auto-flow: row;
   grid-template-areas:
-    "title title"
-    "subtext photo"
-    "desc photo"
-    "gallery gallery";
+    "title"
+    "subtext"
+    "desc"
+    "gallery";
+  
+  padding: 5em;
+  padding-top: 1em !important;
+  padding-bottom: 0 !important;
 }
 
 h1.title {
@@ -28,23 +32,23 @@ p.subtext {
   grid-area: subtext;
   font-family: 'Anton', sans-serif;
   font-size: 2em;
-  margin-top: 0;
+  margin: 0;
   color: var(--about-subtext-colour);
-}
-
-.photo {
-  grid-area: photo;
-
-  > img {
-    .border();
-    width: 100%;
-    box-shadow: 0px 0px 5px -2px #000000;
-  }
 }
 
 main {
   grid-area: desc;
   padding: 0 !important;
+
+  > .photo > img {
+    .border();
+    width: 20vw;
+    box-shadow: 0px 0px 5px -2px #000000;
+    float: right;
+    margin: 15px;
+    margin-right: 0;
+    margin-top: 2ex;
+  }
 }
 
 .gallery {
@@ -63,22 +67,16 @@ main {
   }
 
   > div {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-items: center;
-    align-items: center;
-    padding: 1em;
-    justify-content: space-between;
-    align-content: center;
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     gap: 1em;
 
     padding: 1em;
     
     > img {
       .border();
-      height: 100%;
-      object-fit: cover;
+      width: 100%;
     }
   }
 }
