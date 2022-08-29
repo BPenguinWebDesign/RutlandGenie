@@ -28,6 +28,7 @@
   --map-circle-outline-colour: #43498a;
   --map-circle-fill-colour: #5e60ce;
   --menu-height: max(15vh, 60px);
+  --mobile-menu-icon-height: calc(var(--menu-height) * 0.5);
 }
 .centre,
 nav > div > a {

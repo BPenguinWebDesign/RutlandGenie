@@ -22,7 +22,7 @@
 
 @media screen and (max-width: 940px) {
   :root {
-    --menu-height: 12vh;
+    --menu-height: max(12vh, 60px);
   }
 
   nav > .desktop-menu {
@@ -131,7 +131,7 @@
 @media screen and (max-width: 375px) {
   nav > .mobile-menu {
     > section {
-      padding-top: 7.5vh;
+      padding-top: var(--mobile-menu-icon-height);
       
       > div {
         width: 75%;

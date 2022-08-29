@@ -102,13 +102,13 @@ nav {
   
     > label {
       position: relative;
-      left: calc(100vw - 7.5vh - 2.25vh);
-      bottom: calc(var(--menu-height) * 0.825);
+      left: calc(100vw - var(--mobile-menu-icon-height) - (var(--mobile-menu-icon-height) / 3.3333333333333333));
+      bottom: calc(var(--menu-height) * 0.8);
 
       z-index: 4;
   
       > span {
-        font-size: 7.5vh;
+        font-size: var(--mobile-menu-icon-height);
         background-color: var(--mobile-nav-btn-bg-colour);
         border-radius: 3px;
         color: var(--mobile-nav-btn-icon-colour);
@@ -217,7 +217,7 @@ nav {
     font-size: xx-large;
     
     padding: 20vh;
-    max-height: 85vh;
+    max-height: min-content;
     width: 100%;
   }
 }
