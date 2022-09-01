@@ -29,6 +29,8 @@
   --map-circle-fill-colour: #5e60ce;
   --menu-height: max(15vh, 60px);
   --mobile-menu-icon-height: calc(var(--menu-height) * 0.5);
+  --err404-font-colour: white;
+  --body-background: white;
 }
 .centre,
 nav > .desktop-menu > .logo,
@@ -107,6 +109,7 @@ body {
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  background-color: var(--body-background);
 }
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
@@ -156,7 +159,7 @@ h6:not(.rootfont) {
   padding-bottom: 1em;
 }
 .horizontal-pad-1,
-.container > section.banner {
+.container > section.banner > .overlay-container {
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -324,11 +327,8 @@ nav > .mobile-menu > input:checked ~ label > span {
   padding-bottom: 0 !important;
 }
 .container > section.banner {
-  background-color: var(--home-banner-bg-colour);
-  color: var(--home-banner-font-colour);
   text-align: center;
   font-size: xx-large;
-  padding: 20vh;
   max-height: -webkit-min-content;
   max-height: -moz-min-content;
   max-height: min-content;
@@ -397,7 +397,7 @@ footer > span {
   }
 }
 @media screen and (max-width: 750px) {
-  .container > section.banner {
+  .container > section.banner > .overlay-container {
     padding-left: 3em;
     padding-right: 3em;
   }
@@ -420,18 +420,18 @@ footer > span {
             transition-duration: 1s;
   }
 }
+@media screen and (max-width: 475px) {
+  .container > section.banner > .overlay-container {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
 @media screen and (max-width: 400px) {
   .container > section.banner {
     font-size: x-large;
   }
   .container > section.mission {
     font-size: 1em;
-  }
-}
-@media screen and (max-width: 460px) {
-  .container > section.banner {
-    padding-left: 1em;
-    padding-right: 1em;
   }
 }
 @media screen and (max-width: 395px) {
@@ -457,19 +457,68 @@ footer {
   margin-top: 2em;
 }
 .container > section.banner {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 128, 0.25)), to(rgba(0, 0, 128, 0.25))), url(/assets/img/home/background.jpg);
-  background-image: -o-linear-gradient(rgba(0, 0, 128, 0.25), rgba(0, 0, 128, 0.25)), url(/assets/img/home/background.jpg);
-  background-image: linear-gradient(rgba(0, 0, 128, 0.25), rgba(0, 0, 128, 0.25)), url(/assets/img/home/background.jpg);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0;
+  grid-template-areas: "banner";
+  max-height: 80vh;
+  min-height: 60vh;
+}
+.container > section.banner > div.bg-image {
+  grid-area: banner;
+  overflow: hidden;
+  position: relative;
+  -webkit-clip-path: inset(0);
+          clip-path: inset(0);
+}
+.container > section.banner > div.bg-image::after {
+  content: '';
+  position: absolute;
   -webkit-box-shadow: inset 0px 0px 15px -2px #000000;
           box-shadow: inset 0px 0px 15px -2px #000000;
-  -webkit-transform: translateY(-1px);
-      -ms-transform: translateY(-1px);
-          transform: translateY(-1px);
-  min-height: 60vh;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 128, 0.25);
+}
+.container > section.banner > div.bg-image > img {
+  min-width: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 0;
+  position: fixed;
+  pointer-events: none;
+}
+.container > section.banner > .overlay-container {
+  grid-area: banner;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  z-index: 1;
+}
+.container > section.banner > .overlay-container > .overlay {
+  padding: 1em;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.container > section.banner > .overlay-container > .overlay > p {
+  margin-bottom: 0;
+}
+.container > section.banner > .overlay-container > .overlay {
+  color: var(--home-banner-font-colour);
+}
+.container > section.banner > .overlay-container > .overlay > p {
+  margin-bottom: 0;
 }
 .container > .mission {
   display: grid;

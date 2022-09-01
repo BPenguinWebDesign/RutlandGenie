@@ -209,16 +209,75 @@ nav {
     padding-bottom: 0 !important;
   }
 
-  > section.banner:extend(.horizontal-pad-1) {
-    background-color: var(--home-banner-bg-colour);
-    color: var(--home-banner-font-colour);
-
+  > section.banner {
     text-align: center;
     font-size: xx-large;
     
-    padding: 20vh;
     max-height: min-content;
     width: 100%;
+  }
+}
+
+.image-banner() {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0;
+  grid-template-areas:
+    "banner";
+
+  max-height: 80vh;
+  
+  > div.bg-image {
+    grid-area: banner;
+    overflow: hidden;
+
+    position: relative;
+    clip-path: inset(0);
+
+    &::after {
+      content: '';
+      position: absolute;
+      box-shadow: inset 0px 0px 15px -2px #000000;
+      display: block;
+      height: 100%;
+      width: 100%;
+      top: 0;
+
+      background-color: rgba(0, 0, 50%, 25%);
+    }
+
+    > img {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      position: fixed;
+
+      pointer-events: none;
+    }
+  }
+
+  > .overlay-container:extend(.horizontal-pad-1) {
+    grid-area: banner;
+    width: fit-content;
+    margin: auto;
+    z-index: 1;
+
+    > .overlay {
+      padding: 1em;
+      border-radius: 15px;
+      background-color: fade(black, 50%);
+      
+      > p {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 

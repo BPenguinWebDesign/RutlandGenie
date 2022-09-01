@@ -29,6 +29,8 @@
   --map-circle-fill-colour: #5e60ce;
   --menu-height: max(15vh, 60px);
   --mobile-menu-icon-height: calc(var(--menu-height) * 0.5);
+  --err404-font-colour: white;
+  --body-background: white;
 }
 .centre,
 nav > div > a {
@@ -98,6 +100,7 @@ body {
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  background-color: var(--body-background);
 }
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {

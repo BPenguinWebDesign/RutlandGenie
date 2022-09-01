@@ -67,7 +67,7 @@
 }
 
 @media screen and (max-width: 750px) {
-  .container > section.banner {
+  .container > section.banner > .overlay-container {
     padding-left: 3em;
     padding-right: 3em;
   }
@@ -96,6 +96,13 @@
   }
 }
 
+@media screen and (max-width: 475px) {
+  .container>section.banner>.overlay-container {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .container {
     > section.banner {
@@ -105,13 +112,6 @@
     > section.mission {
       font-size: 1em;
     }
-  }
-}
-
-@media screen and (max-width: 460px) {
-  .container > section.banner {
-    padding-left: 1em;
-    padding-right: 1em;
   }
 }
 

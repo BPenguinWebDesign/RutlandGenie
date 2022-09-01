@@ -17,22 +17,19 @@ footer {
 
 .container {
   > section.banner {
-    background-image: 
-      linear-gradient(
-        rgba(0, 0, 50%, 25%),
-        rgba(0, 0, 50%, 25%)
-      ),
-      url(/assets/img/home/background.jpg);
+    .image-banner();
     
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    box-shadow: inset 0px 0px 15px -2px #000000;
-
-    transform: translateY(-1px);
     min-height: 60vh;
+
+    > .overlay-container {
+      > .overlay {
+        color: var(--home-banner-font-colour);
+
+        > p {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   > .mission:extend(.centre):extend(.text-centre) {

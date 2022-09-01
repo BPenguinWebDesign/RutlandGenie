@@ -29,6 +29,8 @@
   --map-circle-fill-colour: #5e60ce;
   --menu-height: max(15vh, 60px);
   --mobile-menu-icon-height: calc(var(--menu-height) * 0.5);
+  --err404-font-colour: white;
+  --body-background: white;
 }
 .centre,
 nav > .desktop-menu > .logo,
@@ -106,6 +108,7 @@ body {
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  background-color: var(--body-background);
 }
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
@@ -155,8 +158,7 @@ h6:not(.rootfont) {
   padding-top: 1em;
   padding-bottom: 1em;
 }
-.horizontal-pad-1,
-.container > section.banner {
+.horizontal-pad-1 {
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -324,11 +326,8 @@ nav > .mobile-menu > input:checked ~ label > span {
   padding-bottom: 0 !important;
 }
 .container > section.banner {
-  background-color: var(--home-banner-bg-colour);
-  color: var(--home-banner-font-colour);
   text-align: center;
   font-size: xx-large;
-  padding: 20vh;
   max-height: -webkit-min-content;
   max-height: -moz-min-content;
   max-height: min-content;
@@ -397,7 +396,7 @@ footer > span {
   }
 }
 @media screen and (max-width: 750px) {
-  .container > section.banner {
+  .container > section.banner > .overlay-container {
     padding-left: 3em;
     padding-right: 3em;
   }
@@ -420,18 +419,18 @@ footer > span {
             transition-duration: 1s;
   }
 }
+@media screen and (max-width: 475px) {
+  .container > section.banner > .overlay-container {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
 @media screen and (max-width: 400px) {
   .container > section.banner {
     font-size: x-large;
   }
   .container > section.mission {
     font-size: 1em;
-  }
-}
-@media screen and (max-width: 460px) {
-  .container > section.banner {
-    padding-left: 1em;
-    padding-right: 1em;
   }
 }
 @media screen and (max-width: 395px) {

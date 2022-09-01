@@ -1,1 +1,1 @@
-npm i -g less less-plugin-autoprefix typescript
+npm i -g less less-plugin-autoprefix
